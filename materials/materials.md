@@ -9,7 +9,7 @@ lower flux density check below
 
 ## VitroPerm
 
-Density: 7.35 g/mm3
+Density: 7.35 g/cm3
 
 \cite{vitroterm_manual}
 
