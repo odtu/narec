@@ -13,6 +13,8 @@ Conductor diameter should be < 1.6 x skin depth
 Skin depth for copper
 50 Hz	9.2 mm
 1 kHz	2.06 mm
+2 kHz	1.49 mm
+5 kHz	0.94 mm
 10 kHz	0.65 mm
 50 kHz	0.29 mm
 

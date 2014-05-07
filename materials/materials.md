@@ -1,5 +1,9 @@
 # Core Materials
 
+## Intro
+
+
+
 ## Nano-crystalline
 
 Vacuumschmelze is one of the biggest magnetic material manufacturers. They have the following soft magnetic nano-crystalline materials available:
@@ -49,3 +53,26 @@ Saturation Flux density 	1.2 T 		0.8 T
 Losses (f=20 kHz, B=0.2T) 	1.4W/kg 	2 W/kg
 Losses (f=100 kHz, B=0.2T) 	35W/kg 		40 W/kg	
 Continuous Operation 		120 C 		110 C
+
+
+## Material Comparison \cite{Villar2010}
+
+figure: material_table_villar_2010  (referanslari mendeleyden eklendi: \cite{Heinemann2002} \cite{Steiner2007} \cite{Pavlovsky2005} \cite{Morren2002} \cite{Prasai2007})
+Table -1- MF power transformer designs and physical prototypes found in the literature.
+
+It can be seen from the table that nano-crystalline and amorphous materials are the most suggested materials for medium frequency transformers that work between 1 kHz and 25 kHz.
+
+
+Silicon-Steel: It is a popular choice in line frequency power transformers for its low cost and high-saturation magnetic induction. However, core losses of silicon-steel is high, which makes them unsuitable for medium frequency transformers.
+
+Amorphous and Nanocrystalline: 
+These materials have relatively high saturation point (1.2 - 1.56 T), and the reduced losses make them a suitable core material for applications in the 1-25 kHz range. Furthermore, the performance of these materials does not change significantly with temperature, thus it would be possible to choose a higher operating temperature \cite{Villar2010}. 
+
+Ferrites:
+Ferrites have a low-loss density in high-frequencies, which makes them a suitable material for high-frequency applications such as RF-filters and chokes. However, they have saturation flux density around 0.5 T, which increases the core volume in high power applications.
+
+
+The hysteresis losses and the core loss of different materials are compared in \cite{Villar2010}
+
+hysteresis-losses.png \cite{Villar2010}
+core-loss.png

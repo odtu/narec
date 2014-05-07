@@ -1,0 +1,35 @@
+## Design Steps
+
+
+1- Voltage Power
+
+From the rated power, primary and secondary voltages, the rated current can be calculated.
+
+Initial parameters for the NAREC transformer are stated as:
+
+Primary Voltage: 3 kV
+Secondary Voltage: 300 kV
+Rated Power:  6.5 MVA (pf=1)
+
+From these parameters the primary current can be calculated as 2167 A, where the secondary current is 21.67. The turns ratio is 100.
+
+2-Primary Conductor Area
+It is clear that the primary conductor will have a larger cross-section, however, because of the skin-depth factor, there is a limit on the  thickness of the primary copper.
+
+It is usually accepted that the thickness of the conductor should be less than 1.6 times the skin depth, which is presented in XXX.
+
+The most suitable for the primary winding is selected as foil-type coil, because of flexibility in the height, while keeping the thickness within the limits of dictated by the skin effect.
+
+Some common copper foil-type conductor thickness are 0.5 mm, 1 mm, 1.6 mm, 2 mm, 2.25 mm, 3.15 mm.
+
+The size of the primary conductor is calculated by primary_coil_dimensions.m
+
+Considering a 6.5 MVA at 3 kV primary coil, assuming a current density of 4 A/mm2. The primary coil thickness and width as a function of the operating frequency is given in XX.
+The foil thickness is limited by the skin depth and has to be at thinner than 1.6 times the skin depth. The closest available foil size is chosen as the foil thickness at that frequency.
+From the figures, it may be seen that for frequencies between 500-5000 Hz, the required thickness changes between 4 mm to 1.6 mm. The maximum coil height is around 350 mm, which is a reasonable value.
+
+It is also possible to reduce the primary coil height by using a double winding structure as presented in XX.
+
+3- Number of turns
+
+The number of turns is determined by the core area, saturation flux density and the operating frequency. The number of turns in the secondary winding will be 100 times more considering a 3kV-300kV transformer.
