@@ -33,3 +33,14 @@ It is also possible to reduce the primary coil height by using a double winding 
 3- Number of turns
 
 The number of turns is determined by the core area, saturation flux density and the operating frequency. The number of turns in the secondary winding will be 100 times more considering a 3kV-300kV transformer.
+
+Number of turns can be estimated using the following equation
+
+\begin{equation}
+N_{turns}=\frac{V_{primary}}{\frac{2 \pi}{\sqrt{2}} frequency \times B_{max} \times Area_{core}}
+\end{equation}
+
+where $Area_{core}$ is the cross-section area of the transformer core. Assuming, a square cross-section, and $B_{max}$ as 1.1 T, the number of for primary and secondary windings can be estimated as follows:
+
+transformer size variation grafiklerini ekle
+
