@@ -92,6 +92,10 @@ primary.Rout = primary.winding_Rin + primary.winding_width + primary.outer_insul
 primary.total_height = primary.coil_height + 2*primary.outer_insulation;
 
 %Secondary
+[secondary.coil_diameter, secondary.coil_area]=primary_coil_dimensions(frequency, secondary.current, Jmax);
+%Dowell's Porosity Factor functions to be added
+
+
 secondary.winding_width = 200; %Degisecek!!!!
 secondary.winding_Rin = core.thickness/sqrt(2) + secondary.inner_insulation;
 %secondary.mean_coil_length = 2*pi*(secondary.winding_Rin + 0.5*primary.winding_width);
@@ -138,7 +142,6 @@ core.mass = core.volume * core.density/1e6; % Kg
 
 %Get AC resistance (including eddy losses)
 primary.R_ac = get_AC_resistance( primary.mean_coil_length, primary.coil_height, primary.coil_thickness, primary.N_turns, frequency);
-
 
 
 %DC Resistance
