@@ -1,22 +1,8 @@
 #Skin Depth
 
-\sigma = \sqrt{\frac{2\rho}{\mu \omega}}
-
-
 \cite{Filchev2009}
-50 kV, high frequency (20 kHz), 150 kW
-Nanocrystalline -> losses -> 60W/kg, 1 T, 20kHz
 insulator material -> nylon 66 -> 25 kV/mm
 
-Conductor diameter should be < 1.6 x skin depth
-
-Skin depth for copper
-50 Hz	9.2 mm
-1 kHz	2.06 mm
-2 kHz	1.49 mm
-5 kHz	0.94 mm
-10 kHz	0.65 mm
-50 kHz	0.29 mm
 
 150kW HV HF transformer
 
@@ -52,9 +38,6 @@ Nturns 12
 Leakage inductance 1.6uH
 
 !figure2 alinabilir.
-
-rephase
-with higher frequencies, effects such as skin and proximity, hysteresis losses and dielectric losses are significantly in- creased in relation to operation at 50/60Hz. Moreover, the reduction in size usually implies an increased loss density in the transformer, which demands considerable thermal management efforts
 
 table-II material properties
 
