@@ -337,9 +337,10 @@ Frequency & Skin Depth \\
 \label{skin-depth}
 \end{table}
 
-In a step-up transformer the cross-section area of the primary conductor will be larger. However, the limit due to skin-depth limits the thickness of the conductor. Therefore, the most feasible way is to use foil conductors in the primary windings.
+In a step-up transformer the cross-section area of the primary conductor will be larger. However, the limit due to skin-depth limits the thickness of the conductor. Therefore, the most feasible way is to use foil conductors in the primary windings. 
+Dowell calculated eddy losses in foil type transformer windings in \cite{Dowell1966}. A detailed explanation of these one dimensional Maxwell equations can be found in \cite{Villar2010} and a summary will be presented in this section.
 
-Dowell calculated eddy losses in transformer windings in \cite{Dowell1966}. A detailed explanation of these one dimensional Maxwell equations can be found in \cite{Villar2010}. Referring those equations, the DC resistance of a foil winding can be expressed as:
+The DC resistance of a foil winding can be expressed as:
 
 \begin{equation}
   R_{dc} = \rho \frac{L_{mean}}{t_w h_w} N_{turns}
@@ -347,11 +348,12 @@ Dowell calculated eddy losses in transformer windings in \cite{Dowell1966}. A de
 
 where $L_{mean}$ is the mean turn length of the coil, $t_w$ is the thickness, $h_w$ is the height, $\rho$ is the resistivity of copper.
 
-The AC resistance is more complicated and depends on the ratio of the wire thickness to skin depth ($\delta$):
+The AC resistance is more complicated to calculate and depends on the ratio of the wire thickness to skin depth ($\delta$) and can be expressed as:
 
 \begin{equation}
   R_{ac}=\rho \frac{L_{mean}}{h_w \delta} N_{turns} \left[\varsigma_1 + \frac{2}{3} (N_{turns}^2-1)\varsigma_2\right]
 \end{equation}
+
 where:
 
 \begin{equation}
@@ -360,7 +362,7 @@ where:
   \Delta = \dfrac{t_w}{\delta}
 \end{equation}
 
-Thus, the important factor is the penetration factor (i.e the ratio of conductor thickness to skin depth, $\Delta$). The ratio of AC resistance to DC resistance is called Dowell's resistance factor ($F_r$). The resistance factor as a function of penetration ratio for a 2 mm thick foil wire is presented in Fig.~\ref{resistance_factor}. For example, at 1 kHz the skin depth is 2.1 mm (the penetration ratio is approximately 1), the resistance factor is 2.7 for a layer number of 4. Thus the resistive losses will be 2.7 times more compared to DC conduction.
+as can be seen from the equation above,  the important factor is the penetration factor (i.e the ratio of conductor thickness to skin depth, $\Delta$). The ratio of AC resistance to DC resistance is called Dowell's resistance factor ($F_r$). The resistance factor as a function of penetration ratio for a 2 mm thick foil wire is presented in Fig.~\ref{resistance_factor}. For example, at 1 kHz the skin depth is 2.1 mm (the penetration ratio is approximately 1), the resistance factor is 2.7 for a layer number of 4. Thus the resistive losses will be 2.7 times more compared to DC conduction.
 
 \begin{figure}[]
   \centering
@@ -378,13 +380,10 @@ http://dielectricsciences.thomasnet.com/viewitems/all-categories/wire-cable-2
 
 
 
+
+
 # Assumptions from WP2 Document
 
-## Core Material
-
-It is stated that amorphous material and the nano-crystalline material are the most suitable for  high frequency transformers. 
-
-nano-crystalline is better, but operation temperature is limited (120 C), and it is more expensive.
 
 
 ## Winding
@@ -405,6 +404,32 @@ High voltage side: Circular strands (mechanical strength and increased dielectri
 Dry transformer is chosen for increased reliability. Epoxy material is used for insulation.
 
 Water cooling system to reduce the size.
+
+
+\section{All Graphs}
+
+\begin{figure}[]
+  \centering
+    \includegraphics[]{primary_height}
+  \caption{Tum grafikler}
+  \label{primary_thickness}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+    \includegraphics[]{primary_Nturns_core}
+    \includegraphics[]{primary_Nturns_freq}
+  \caption{Tum grafikler}
+  \label{primary_thickness}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+    \includegraphics[]{secondary_Nturns_core}
+    \includegraphics[]{secondary_Nturns_freq}
+  \caption{Tum grafikler}
+  \label{primary_thickness}
+\end{figure}
 
 
 %----------------------------------------------------------------------------------------
