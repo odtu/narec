@@ -348,6 +348,7 @@ The AC resistance is more complicated to calculate and depends on the ratio of t
 
 \begin{equation}
   R_{ac}=\rho \frac{L_{mean}}{h_w \delta} N_{turns} \left[\varsigma_1 + \frac{2}{3} (N_{turns}^2-1)\varsigma_2\right]
+  \label{R_ac_foil}
 \end{equation}
 
 where:
@@ -370,6 +371,51 @@ as can be seen from the equation above,  the important factor is the penetration
 \subsubsection{Secondary-Winding}
 
 There are different analytical models to estimate the AC resistance in round conductors (e.g. high voltage cables that can be used in the secondary winding), such as presented in \cite{Sullivan2003,Ferreira1994}. Although, the method presented by Dowell in \cite{Dowell1966} is assumed as the most established method. In this method Dowell introduced a porosity factor to convert the round conductors to square conductors and then convert to foil type conductors.
+
+Equivalent thickness of a round conductor can be defined as \cite{Dowell1966}:
+
+\begin{equation}
+
+ d_w =  \sqrt{\frac{\pi}{4}} d 
+\end{equation}
+
+where $d$ is the diameter of the round conductor and $d_w$ is the thickness of the equivalent square conductor. Then, similar technique can be applied to convert square conductor to foil type conductor using a second porosity factor as shown in \cite{Villar2010}. Therefore, the AC resistance of the round conductor can be expressed similarly to equation (\ref{R_ac_foil})) as given in \cite{Villar2010}.
+
+
+\section{Core Losses}
+
+The core losses mainly depend on the material type, flux density and operating frequency. The most common way to estimate the core losses is to use a power equation, which is known as the Steinmetz equation:
+
+\begin{equation}
+ P_{core} = K f^a B^b
+\end{equation}
+
+where $K$ is a factor depending on the characteristic of the material, $f$ is the operating frequency, $B$ is the operating magnetic flux density, $a$ and $b$ are determined by the material characteristic obtained from the manufacturer's data.
+
+Steinmetz equation is usually well establied method for line transformers, in which sinusoidal excitation is used. However, in the medium-high frequency transformers, the transformer is excited using power electronics (usually a square waveform, or stepped waveform), and transformer voltage and current include many harmonics.
+
+For non-sinusoidal waveforms, the easiest way to calculate the core losses is to use Fourier transform to get the frequency components and then to estimate individual core losses for each component. There are more deteiled models as reviewed in \cite{Villar2010}:
+
+\begin{itemize}
+\item	Modified Steinmetz Equation
+\item	Improved Generatlized Steinmetz Equation
+\item	Equicalent Elliptical Loop
+\item	Waveform Coefficient Steinmetz Equation
+\end{itemize}
+
+Although these methods can provide more accurate results compared to Fourier transform method, they all require extra measurement steps to determine the material characteristics at different operating frequenciues and waveforms. Therefore, it is impractical to use these models without experimental study at first. Therefore, using standard Steinmetz equation with harmonics contents is an ideal choice for analytical core loss estimation.
+
+\subsection{Core Losses in Non-Sinusoidal Excitation}
+
+It is expected that the transformer developed by Narec will be excited using a square waveform in the low voltage side. The Fourier series of the square waveform can be expressed as:
+
+\begin{equation}
+ f(x) = \frac{4}{\pi} \sum_{n=1,3,5...}^{+\infty} \frac{1}{n} sin ( 2 \pi n x f)
+\end{equation}
+
+where $f$ is the frequency of the square waveform, $n$ is the harmonic order.
+
+
 
 
 kablo katalogu
