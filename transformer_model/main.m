@@ -24,7 +24,7 @@ primary.outer_insulation = 10; % LV last layer of insulation between winding and
 
 primary.gap_between_secondary = 50; % horizontal gap between LV and HV side
 
-primary.insulation_between_coils = 5; %Insulation thickness between two adjacent coils
+secondary.insulation_between_coils = 5; %Insulation thickness between two adjacent coils
 secondary.inner_insulation = 20; % HV insulation between winding and core
 secondary.outer_insulation = 20; % HV last layer of insulation between winding and air
 %{

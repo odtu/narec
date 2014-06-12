@@ -313,7 +313,7 @@ Skin effect is an important factor in AC resistance and eddy current losses in a
   \sigma = \sqrt{\frac{2\rho}{\mu \omega}}
 \end{equation}
 
-where $\rho$ is the resistivity of the conductor, $\mu$ is permeability, and $\omega$ is the frequency in rad/s. Skin depth of copper for different operating frequencies are presented in Table~\ref{skin-depth}. For reasonable AC resistance characteristics, the rule of thumb is to choose the conductor diameter smaller than 1.6 times of the skin depth. Thus, for a 1-2 kHz transformer application, the conductor shouldn't be thicker than 2-3 mm. 
+where $\rho$ is the resistivity of the conductor, $\mu$ is permeability, and $\omega$ is the frequency in rad/s. Skin depth of copper for different operating frequencies are presented in Table~\ref{skin-depth}. For reasonable AC resistance characteristics, the rule of thumb is to choose the conductor diameter smaller than 1.6 times of the skin depth. Thus, for a 1-2 kHz transformer application, the conductor should not be thicker than 2-3 mm. 
 
 \begin{table}[]
 \begin{center}
@@ -407,32 +407,56 @@ Although these methods can provide more accurate results compared to Fourier tra
 
 \subsection{Core Losses in Non-Sinusoidal Excitation}
 
-It is expected that the transformer developed by Narec will be excited using a square waveform in the low voltage side. The Fourier series of the square waveform can be expressed as:
+The transformer developed by Narec will be excited using a square waveform in the low voltage side, and a multi-level inverter will be used in the high voltage side.
+
+The core losses resulting from the low-voltage square wave excitation can be calculated by expressing the square wave as a Fourier series:
 
 \begin{equation}
- f(x) = \frac{4}{\pi} \sum_{n=1,3,5...}^{+\infty} \frac{1}{n} sin ( 2 \pi n x f)
+ f(x) = \frac{4}{\pi} \sum_{n=1,3,5...}^{+\infty} \frac{1}{n} sin ( n \omega x )
 \end{equation}
 
-where $f$ is the frequency of the square waveform, $n$ is the harmonic order.
+where $\omega$ is the frequency of the square waveform in radians/s, $n$ is the harmonic order. The magnitudes of the Fourier series components of the square wave relative to the magnitude of the square wave is presented in Table~\ref{square_harmonics}.
 
-
-
+\begin{table}[]
+\begin{center}
+\begin{tabular}{ll}
+Harmonic Order & Magnitude\\
+\hline
+1 & 1.273\\
+3 & 0.424 \\
+5 & 0.254 \\
+7 & 0.182 \\
+9 & 0.141 \\
+11 & 0.116 \\
+13 & 0.098 \\
+\hline
+\end{tabular} 
+\end{tabular} 
+\end{center}
+\caption{Fourier series magnitudes relative to the magnitude of the square wave.}
+\label{square_harmonics}
+\end{table}
 
 kablo katalogu
 http://dielectricsciences.thomasnet.com/viewitems/all-categories/wire-cable-2
 
 
+\section{Modelling of the Transformer}
 
+A Matlab model is developed to estimate the transformer models and calculate copper and core losses. The design methodology used in the Matlab code is depicted in Fig.~\ref{design_method}.
 
+\begin{figure}[]
+  \centering
+    \includegraphics[]{design_method}
+  \caption{Design methodology to estimate transformer parameters and losses.}
+  \label{design_method}
+\end{figure}
 
-# Assumptions from WP2 Document
+\subsection{Estimation of Winding Parameters}
 
+It is assumed from the WP 2 report that, foil type conductors are the most suitable option for the low voltage side. On the high voltage side, circular stranded cables are more suitable with their mechanical strength and increased dielectric insulation.
 
-
-## Winding
-
-Low voltage side: Foil topology (reduces the size and weight).
-High voltage side: Circular strands (mechanical strength and increased dielectric strength).
+The thickness of the coil is chosen according to the skin depth at the operating frequency. The conductor thickness is selected to be less than 1.5 times skin depth, however, actual foil conductor thicknes is limited to standard wire gauges (e.g. 1 mm, 1.6 mm, 2 mm, 2.25 mm...). The frequency of the transformer versus the most suitable foil coil thickness is plotted in Fig.~\ref{primary_thickness}. FOr example, for operating frequencies between 2 kHz and 3 kHz, the most suitable conductor thickness is 2 mm.
 
 
 \begin{figure}[]
@@ -442,37 +466,53 @@ High voltage side: Circular strands (mechanical strength and increased dielectri
   \label{primary_thickness}
 \end{figure}
 
-## Insulation 
 
-Dry transformer is chosen for increased reliability. Epoxy material is used for insulation.
-
-Water cooling system to reduce the size.
-
-
-\section{All Graphs}
+Then, using rated current and the rated current density, the required conductor area can be calculated. The conductor height can be found by dividing the conductor area to conductor thickness. For example, assuming a current density of $4 A/mm^2$, the foil conductor height can be calculated as a function of the operating frequency as shown in Fig.~\ref{primary_height}.
 
 \begin{figure}[]
   \centering
     \includegraphics[]{primary_height}
-  \caption{Tum grafikler}
-  \label{primary_thickness}
+  \caption{Height of the foil conductor as a function of the operating frequency.}
+  \label{primary_height}
 \end{figure}
+
+The insulation parameters should be known to determine the dimensions of the primary and secondary windings. Dry insulation is considered to be the most suitable insulation type due to increased reliability and ease of manufacturing. However, oil flooded windings can be prefered to improve thermal performcance.
+
+In the graphs below following arbitrary insulation thickness values are used, which can be modified for a more accurate estimation.
+
+\begin{itemize}
+\item Insulation thickness between primary (low voltage) conductors: 1 mm
+\item Insulation thickness from primary winding to core: 10 mm
+\item Outer insulation thickness around primary winding: 10 mm
+\item Insulation thickness between secondary (high voltage) conductors: 5 mm
+\item Insulation thickness from secondary winding to core: 20 mm
+\item Outer insulation around secondary winding: 20 mm
+\item Insulation thickness between primary and secondary windings: 50 mm
+\end{itemize}
+
+\subsection{Estimation of Core Dimensions}
+
+The most important parameter of the core is the cross-section area, which depends on the operating frequency, flux density in the core and the number of turns. Assuming a square cross-section area, the thickness of the core as  a function of the primary number of turns is estimated as in Fig.~\ref{core_dimensions}, and similarly graphs for the secondary number of turns are presented in Fig.~\ref{secondary_core_dimensions}. The operating flux density of the core is assumed as 1.1 T, the primary voltage magnitude is assumed as 3 kV, and the secondary voltage magnitude is assumed as 300 kV.
 
 \begin{figure}[]
   \centering
     \includegraphics[]{primary_Nturns_core}
     \includegraphics[]{primary_Nturns_freq}
-  \caption{Tum grafikler}
-  \label{primary_thickness}
+  \caption{Core-thickness (assuming square cross-section area) as a function of the primary number of turns and operating frequency (B=1.1 T, Vin=3 kV, Vout=300 kV).}
+  \label{core_dimensions}
 \end{figure}
+
 
 \begin{figure}[]
   \centering
     \includegraphics[]{secondary_Nturns_core}
     \includegraphics[]{secondary_Nturns_freq}
-  \caption{Tum grafikler}
-  \label{primary_thickness}
+   \caption{Core-thickness (assuming square cross-section area) as a function of the secondary number of turns and operating frequency (B=1.1 T, Vin=3 kV, Vout=300 kV).}
+  \label{secondary_core_dimensions}
 \end{figure}
+
+
+Core mass calculations to be added.
 
 
 %----------------------------------------------------------------------------------------
