@@ -375,9 +375,9 @@ There are different analytical models to estimate the AC resistance in round con
 Equivalent thickness of a round conductor can be defined as \cite{Dowell1966}:
 
 \begin{equation}
-
  d_w =  \sqrt{\frac{\pi}{4}} d 
-\end{equation}
+
+ \end{equation}
 
 where $d$ is the diameter of the round conductor and $d_w$ is the thickness of the equivalent square conductor. Then, similar technique can be applied to convert square conductor to foil type conductor using a second porosity factor as shown in \cite{Villar2010}. Therefore, the AC resistance of the round conductor can be expressed similarly to equation (\ref{R_ac_foil})) as given in \cite{Villar2010}.
 
@@ -476,9 +476,25 @@ Then, using rated current and the rated current density, the required conductor 
   \label{primary_height}
 \end{figure}
 
-The insulation parameters should be known to determine the dimensions of the primary and secondary windings. Dry insulation is considered to be the most suitable insulation type due to increased reliability and ease of manufacturing. However, oil flooded windings can be prefered to improve thermal performcance.
+Insulation parameters should be known to determine the dimensions of the primary and secondary windings. Dry insulation is considered to be the most suitable insulation type due to increased reliability and ease of manufacturing. However, oil flooded windings can be prefered to improve thermal performcance.  In Table~\ref{dielectric}, dielectric strenghts of some common dry-type insulation materials are presented. Although, type of the insulation material is not specified in this report, following insulation thickness values are used to calculate AC copper losses. These values should be modified once the insulation type is specified, to get more accurate results.
 
-In the graphs below following arbitrary insulation thickness values are used, which can be modified for a more accurate estimation.
+\begin{table}[]
+\begin{center}
+\begin{tabular}{lcc}
+Insulation Type & Material & Dielectric Strength\\
+\hline
+Potted & Epoxy & 16 kv/mm\\
+Potted & Micares & 8-24 kV/mm \\
+HV Cable & Silicone & 4-28 kV/mm\\
+HV Cable & PVC & 10-10 kV/mm\\
+HV Cable & HDPE & 19 kV/mm \\
+\hline
+\end{tabular} 
+\end{tabular} 
+\end{center}
+\caption{Dry-type insulation dielectric strengths \cite{Ortiz2010}.}
+\label{dielectric}
+\end{table}
 
 \begin{itemize}
 \item Insulation thickness between primary (low voltage) conductors: 1 mm
