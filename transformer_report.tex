@@ -395,7 +395,7 @@ The core losses mainly depend on the material type, flux density and operating f
 
 where $f$ is the operating frequency, $B$ is peak magnetic flux density, $K$, $a$ and $b$ are factors determined by the material characteristic obtained from the manufacturer's data.
 
-Steinmetz equation is usually well establied method for line transformers, in which sinusoidal excitation is used. However, in the medium-high frequency transformers, the transformer is excited using power electronics (usually a square waveform, or stepped waveform), and transformer voltage and current include many harmonics.
+Steinmetz equation is usually well established method for line transformers, in which sinusoidal excitation is used. However, in the medium-high frequency transformers, the transformer is excited using power electronics (usually a square waveform, or stepped waveform), and transformer voltage and current include many harmonics.
 
 
 \subsection{Core Losses in Non-Sinusoidal Excitation}
@@ -405,7 +405,7 @@ Various methods are developed to model the core losses under non-sinusoidal exci
 \begin{itemize}
 \item	Modified Steinmetz Equation
 \item	Improved Generalized Steinmetz Equation
-\item	Equicalent Elliptical Loop
+\item	Equivalent Elliptical Loop
 \item	Waveform Coefficient Steinmetz Equation
 \end{itemize}
 
@@ -413,7 +413,7 @@ In \cite{Venkatachalam2002}, a model has been developed to predict the non-sinus
 
 
 
-Although these methods can provide more accurate results compared to Fourier transform method, they all require extra measurement steps to determine the material characteristics at different operating frequenciues and waveforms. Therefore, it is impractical to use these models without experimental study at first. Therefore, using standard Steinmetz equation with harmonics contents is an ideal choice for analytical core loss estimation.
+Although these methods can provide more accurate results compared to Fourier transform method, they all require extra measurement steps to determine the material characteristics at different operating frequencies and waveforms. Therefore, it is impractical to use these models without experimental study at first. Therefore, using standard Steinmetz equation with harmonics contents is an ideal choice for analytical core loss estimation.
 
 For non-sinusoidal waveforms, the easiest way to calculate the core losses is to use Fourier transform to get the frequency components and then to estimate individual core losses for each component. 
 
@@ -448,7 +448,7 @@ Harmonic Order & Magnitude\\
 \end{table}
 
 
-\section{Modelling of the Transformer}
+\section{Modeling of the Transformer}
 
 A Matlab model is developed to estimate the transformer models and calculate copper and core losses. The design methodology used in the Matlab code is depicted in Fig.~\ref{design_method}.
 
@@ -463,7 +463,7 @@ A Matlab model is developed to estimate the transformer models and calculate cop
 
 It is assumed from the WP 2 report that, foil type conductors are the most suitable option for the low voltage side. On the high voltage side, circular stranded cables are more suitable with their mechanical strength and increased dielectric insulation.
 
-The thickness of the coil is chosen according to the skin depth at the operating frequency. The conductor thickness is selected to be less than 1.5 times skin depth, however, actual foil conductor thicknes is limited to standard wire gauges (e.g. 1 mm, 1.6 mm, 2 mm, 2.25 mm...). The frequency of the transformer versus the most suitable foil coil thickness is plotted in Fig.~\ref{primary_thickness}. FOr example, for operating frequencies between 2 kHz and 3 kHz, the most suitable conductor thickness is 2 mm.
+The thickness of the coil is chosen according to the skin depth at the operating frequency. The conductor thickness is selected to be less than 1.5 times skin depth, however, actual foil conductor thickness is limited to standard wire gauges (e.g. 1 mm, 1.6 mm, 2 mm, 2.25 mm...). The frequency of the transformer versus the most suitable foil coil thickness is plotted in Fig.~\ref{primary_thickness}. For example, for operating frequencies between 2 kHz and 3 kHz, the most suitable conductor thickness is 2 mm.
 
 
 \begin{figure}[]
@@ -476,7 +476,7 @@ The thickness of the coil is chosen according to the skin depth at the operating
 
 Then, using rated current and the rated current density, the required conductor area can be calculated. The conductor height can be found by dividing the conductor area to conductor thickness. For example, assuming a current density of $4 A/mm^2$, the foil conductor height can be calculated as a function of the operating frequency as shown in Fig.~\ref{primary_height}.
 
-Similar method can be used for the secondary HV winding, where a standard circular HV cable can be used. The standard diameter of these cables are 2.5 mm4 mm, 6 mm, 10 mm, 16 mm. More information about HV cables can be found in \cite{HVcable}.
+Similar method can be used for the secondary HV winding, where a standard circular HV cable can be used. The standard diameter of these cables are 2.5 mm, 4 mm, 6 mm, 10 mm, 16 mm. More information about HV cables can be found in \cite{HVcable}.
 
 
 \begin{figure}[]
@@ -486,14 +486,14 @@ Similar method can be used for the secondary HV winding, where a standard circul
   \label{primary_height}
 \end{figure}
 
-Insulation parameters should be known to determine the dimensions of the primary and secondary windings. Dry insulation is considered to be the most suitable insulation type due to increased reliability and ease of manufacturing. However, oil flooded windings can be prefered to improve thermal performcance.  In Table~\ref{dielectric}, dielectric strenghts of some common dry-type insulation materials are presented and typical insulation thickness values are presented in \cite{Ortiz2010}. Although, type of the insulation material is not specified in this report, but it is stated in WP2 report that the most suitable insulation type is potted epoxy. Following insulation thickness values are chosen to calculate AC copper losses. In order to get more accurate results, these values should be modified in the model once the detailed desing of the transformer is completed.
+Insulation parameters should be known to determine the dimensions of the primary and secondary windings. Dry insulation is considered to be the most suitable insulation type due to increased reliability and ease of manufacturing. However, oil flooded windings can be preferred to improve thermal performance.  In Table~\ref{dielectric}, dielectric strengths of some common dry-type insulation materials are presented and typical insulation thickness values are presented in \cite{Ortiz2010}. Although, type of the insulation material is not specified in this report, but it is stated in WP2 report that the most suitable insulation type is potted epoxy. Following insulation thickness values are chosen to calculate AC copper losses. In order to get more accurate results, these values should be modified in the model once the detailed design of the transformer is completed.
 
 \begin{table}[]
 \begin{center}
 \begin{tabular}{lcc}
 Insulation Type & Material & Dielectric Strength\\
 \hline
-Potted & Epoxy & 16 kv/mm\\
+Potted & Epoxy & 16 kV/mm\\
 Potted & Micares & 8-24 kV/mm \\
 HV Cable & Silicone & 4-28 kV/mm\\
 HV Cable & PVC & 10-10 kV/mm\\
