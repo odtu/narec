@@ -305,6 +305,9 @@ The high frequency excitation in a medium frequency transformer has two main eff
   \item Proximity Effect is the interaction between two adjacent conductors that alters the current distribution in the conductor. Same principles(e.g. proximity, frequency) apply in the proximity affect.
 \end{itemize}
 
+Losses due to skin effect decrease by increasing the foil thickness whereas proximity effect losses increase with increasing foil thickness \cite{Ortiz2010}.
+
+
 \subsubsection{Skin Effect}
 
 Skin effect is an important factor in AC resistance and eddy current losses in a transformer. Skin effect is effected by the skin depth, which can be expressed as:
@@ -390,22 +393,29 @@ The core losses mainly depend on the material type, flux density and operating f
  P_{core} = K f^a B^b
 \end{equation}
 
-where $K$ is a factor depending on the characteristic of the material, $f$ is the operating frequency, $B$ is the operating magnetic flux density, $a$ and $b$ are determined by the material characteristic obtained from the manufacturer's data.
+where $f$ is the operating frequency, $B$ is peak magnetic flux density, $K$, $a$ and $b$ are factors determined by the material characteristic obtained from the manufacturer's data.
 
 Steinmetz equation is usually well establied method for line transformers, in which sinusoidal excitation is used. However, in the medium-high frequency transformers, the transformer is excited using power electronics (usually a square waveform, or stepped waveform), and transformer voltage and current include many harmonics.
 
-For non-sinusoidal waveforms, the easiest way to calculate the core losses is to use Fourier transform to get the frequency components and then to estimate individual core losses for each component. There are more deteiled models as reviewed in \cite{Villar2010}:
+
+\subsection{Core Losses in Non-Sinusoidal Excitation}
+
+Various methods are developed to model the core losses under non-sinusoidal excitation \cite{Venkatachalam2002,Reinert2001}. Some of the methods reviewed in \cite{Villar2010} can be listed as:
 
 \begin{itemize}
 \item	Modified Steinmetz Equation
-\item	Improved Generatlized Steinmetz Equation
+\item	Improved Generalized Steinmetz Equation
 \item	Equicalent Elliptical Loop
 \item	Waveform Coefficient Steinmetz Equation
 \end{itemize}
 
+In \cite{Venkatachalam2002}, a model has been developed to predict the non-sinusoidal excitation losses using just the standard Steinmetz parameters. The model calculates the total loss by adding the losses in major and minor loops in the voltage waveform.
+
+
+
 Although these methods can provide more accurate results compared to Fourier transform method, they all require extra measurement steps to determine the material characteristics at different operating frequenciues and waveforms. Therefore, it is impractical to use these models without experimental study at first. Therefore, using standard Steinmetz equation with harmonics contents is an ideal choice for analytical core loss estimation.
 
-\subsection{Core Losses in Non-Sinusoidal Excitation}
+For non-sinusoidal waveforms, the easiest way to calculate the core losses is to use Fourier transform to get the frequency components and then to estimate individual core losses for each component. 
 
 The transformer developed by Narec will be excited using a square waveform in the low voltage side, and a multi-level inverter will be used in the high voltage side.
 
@@ -437,9 +447,6 @@ Harmonic Order & Magnitude\\
 \label{square_harmonics}
 \end{table}
 
-kablo katalogu
-http://dielectricsciences.thomasnet.com/viewitems/all-categories/wire-cable-2
-
 
 \section{Modelling of the Transformer}
 
@@ -469,6 +476,9 @@ The thickness of the coil is chosen according to the skin depth at the operating
 
 Then, using rated current and the rated current density, the required conductor area can be calculated. The conductor height can be found by dividing the conductor area to conductor thickness. For example, assuming a current density of $4 A/mm^2$, the foil conductor height can be calculated as a function of the operating frequency as shown in Fig.~\ref{primary_height}.
 
+Similar method can be used for the secondary HV winding, where a standard circular HV cable can be used. The standard diameter of these cables are 2.5 mm4 mm, 6 mm, 10 mm, 16 mm. More information about HV cables can be found in \cite{HVcable}.
+
+
 \begin{figure}[]
   \centering
     \includegraphics[]{primary_height}
@@ -476,7 +486,7 @@ Then, using rated current and the rated current density, the required conductor 
   \label{primary_height}
 \end{figure}
 
-Insulation parameters should be known to determine the dimensions of the primary and secondary windings. Dry insulation is considered to be the most suitable insulation type due to increased reliability and ease of manufacturing. However, oil flooded windings can be prefered to improve thermal performcance.  In Table~\ref{dielectric}, dielectric strenghts of some common dry-type insulation materials are presented. Although, type of the insulation material is not specified in this report, following insulation thickness values are used to calculate AC copper losses. These values should be modified once the insulation type is specified, to get more accurate results.
+Insulation parameters should be known to determine the dimensions of the primary and secondary windings. Dry insulation is considered to be the most suitable insulation type due to increased reliability and ease of manufacturing. However, oil flooded windings can be prefered to improve thermal performcance.  In Table~\ref{dielectric}, dielectric strenghts of some common dry-type insulation materials are presented and typical insulation thickness values are presented in \cite{Ortiz2010}. Although, type of the insulation material is not specified in this report, but it is stated in WP2 report that the most suitable insulation type is potted epoxy. Following insulation thickness values are chosen to calculate AC copper losses. In order to get more accurate results, these values should be modified in the model once the detailed desing of the transformer is completed.
 
 \begin{table}[]
 \begin{center}
@@ -530,6 +540,7 @@ The most important parameter of the core is the cross-section area, which depend
 
 Core mass calculations to be added.
 
+\section{Conclusion}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY

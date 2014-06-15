@@ -92,18 +92,22 @@ primary.Rout = primary.winding_Rin + primary.winding_width + primary.outer_insul
 primary.total_height = primary.coil_height + 2*primary.outer_insulation;
 
 %Secondary
-[secondary.coil_diameter, secondary.coil_area]=primary_coil_dimensions(frequency, secondary.current, Jmax);
-%Dowell's Porosity Factor functions to be added
+[secondary.coil_diameter, secondary.coil_area]=secondary_coil_dimensions(secondary.current, Jmax);
 
+%Dowell's Porosity Factor functions can be added
 
-secondary.winding_width = 200; %Degisecek!!!!
-secondary.winding_Rin = core.thickness/sqrt(2) + secondary.inner_insulation;
-%secondary.mean_coil_length = 2*pi*(secondary.winding_Rin + 0.5*primary.winding_width);
-secondary.Rout = secondary.winding_Rin + secondary.winding_width + secondary.outer_insulation;
 %Assume the height of primary and secondary are equal
 secondary.total_height = primary.total_height;
 secondary.winding_height = secondary.total_height - 2*secondary.outer_insulation;
 %secondary.winding_width = round(secondary.winding_area/secondary.winding_height);
+
+secondary.Nlayer_vertical = round(secondary.winding_height/(secondary.coil_diameter + secondary.insulation_between_coils);
+secondary.Nlayer_horizontal = round(secondary.N_turns/secondary.Nlayer_vertical);
+
+secondary.winding_width =  secondary.Nlayer_horizontal*(secondary.coil_diameter + secondary.insulation_between_coils); 
+secondary.winding_Rin = core.thickness/sqrt(2) + secondary.inner_insulation;
+secondary.mean_coil_length = 2*pi*(secondary.winding_Rin + 0.5*secondary.winding_width);
+secondary.Rout = secondary.winding_Rin + secondary.winding_width + secondary.outer_insulation;
 
 
 %% Core Gap - Volume - Mass
