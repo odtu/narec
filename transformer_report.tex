@@ -87,13 +87,12 @@ This report presents the material options for the core of the medium frequency t
 \section{Introduction}
 
 
-A literature review is presented by Robert Fox within WP 2, in which different medium-frequency transformers were compared and the components of medium-frequency transformers are listed. This report will focus on the core materials and the main losses in a transformer.
+A literature review is presented by Robert Fox within WP 2, in which different medium-frequency transformers were compared and the components of medium-frequency transformers are listed. This report will focus on the suitable core materials for medium frequency transformers and the main loss components.
 
-Increasing frequency of a transformer reduces its volume and cost. In \cite{Prasai2007}, it is stated that the weight and size of a 3 MW 1.2 kHz transformer is less than 8\% of an equivalent 50 Hz line transformer. In Fig.~\ref{transformer-vols}, volume variation with operating frequency for a 1 MW transformer is presented.
+Transformers are the bulkiest part of the medium voltage conversion systems \cite{Agheb2012, Steiner2007}. Thus, there is a trend to reduce the size and weight of these components. In \cite{Prasai2007}, it is stated that the weight and size of a 3 MW 1.2 kHz transformer is less than 8\% of an equivalent 50 Hz line transformer. In Fig.~\ref{transformer-vols}, volume variation with operating frequency for a 1 MW transformer is presented. However, as the frequency is increased, skin effect, proximity effect, hysteresis losses and dielectric losses are significantly increased. Furthermore, the reduction in size usually implies same power loss in much smaller area, which demands forced cooling techniques as in \cite{Heinemann2002}.
 
-However, as the frequency is increased, skin effect, proximity effect, hysteresis losses and dielectric losses are significantly increased. Furthermore, the reduction in size usually implies same power loss in much smaller area, which demands forced cooling.
-Important design factors in conventional line transformers and high frequency transformers are tabulated in Table~\ref{important}.
-Challenges of medium-high frequency transformers can be listed as 
+In the transformer design, types of challenges change with increasing frequency. Important design factors in conventional line transformers and high frequency transformers are tabulated in Table~\ref{important}.
+However, challenges of medium to high frequency transformers can be listed as 
  \cite{Villar2010}:
 
 \begin{itemize}
@@ -105,16 +104,7 @@ volumes.
 \item Generation of acoustic noise, which reaches the most sensitive range of the human ear.
 \end{itemize}
 
-
-\begin{figure}[]
-  \centering
-    \includegraphics[scale=0.3]{transformer_volume}
-    \includegraphics[scale=0.25]{transformer_frequency_commercial_orbitz2010a}
-    \caption{Volumes of high frequency transformers(normalized to 1 MW) and rated power and operating frequencies of existing DC-DC converter prototypes \cite{Ortiz2010a,Ortiz2010}.}
-  \label{transformer-vols}
-\end{figure}
-
-\begin{table}[]
+ \begin{table}[]
 \begin{center}
 \begin{tabular}{ll}
 Line Transformer (50 Hz) & High Frequency Transformer\\
@@ -131,10 +121,18 @@ Volume & Parasitic Capacitance\\
 \label{important}
 \end{table}
 
+\begin{figure}[]
+  \centering
+    \includegraphics[scale=0.3]{transformer_volume}
+    \includegraphics[scale=0.25]{transformer_frequency_commercial_orbitz2010a}
+    \caption{Volumes of high frequency transformers(normalized to 1 MW) and rated power and operating frequencies of existing DC-DC converter prototypes \cite{Ortiz2010a,Ortiz2010}.}
+  \label{transformer-vols}
+\end{figure}
+
 
 \section{Core Materials}
 
-Although, various types of electrical steel laminations are commonly used in power transformers. As the operating frequency is increased, there are more options available:
+Although, silicon or nickel-steel laminations are commonly used in conventional line frequency power transformers, the high loss of these components at high frequencies makes other options more viable. Ferrite is one of the first alternatives in the market, but in he recent years materials like amorphous and nanocrystalline become increasingly popular \cite{Agheb2012}.
 
 \subsection*{Amorphous Materials}
 
@@ -222,7 +220,6 @@ The permeability of VitroPerm 500F is significantly higher than ferrite as shown
   \label{vitroperm500_250_permeability}
 \end{figure}
 
-
 VitroPerm has also a high operating temperature compared to ferrite. The Curie temperature of VitroPerm alloys are $600\,^{\circ}\mathrm{C}$. Furthermore, the saturation flux density only reduces by 10\% at $120\,^{\circ}\mathrm{C}$, which allows the core can be overloaded for short-amount of periods up to $180-200 \,^{\circ}\mathrm{C}$. The variation of permeability with temperature for VitroPerm is presented in Fig.~\ref{temp_vs_saturation}.
 
 \begin{figure}[]
@@ -232,7 +229,6 @@ VitroPerm has also a high operating temperature compared to ferrite. The Curie t
   \label{temp_vs_saturation}
 \end{figure}
 
-%Density: 7.35 g/cm3
 \subsection*{Silicon-Steel}
 
 Silicon-steel is a popular choice in line frequency power transformers for its low cost and high-saturation magnetic induction. However, core losses of silicon-steel is high compared to other materials, which makes them unsuitable for medium frequency transformers. The core losses of material will be compared in the next section.
@@ -297,6 +293,8 @@ A 50 kV, high frequency (20 kHz), 150 kW transformer that uses nano-crystalline 
 
 \section{Losses in a Transformer}
 
+There are many analytical models to calculate the losses of medium frequency transformers. These methods, for different transformers types are reviewed in \cite{Agheb2012} and in \cite{Villar2010}.
+
 \subsection{AC Winding Losses}
 
 The high frequency excitation in a medium frequency transformer has two main effects in the transformer windings:
@@ -306,7 +304,6 @@ The high frequency excitation in a medium frequency transformer has two main eff
 \end{itemize}
 
 Losses due to skin effect decrease by increasing the foil thickness whereas proximity effect losses increase with increasing foil thickness \cite{Ortiz2010}.
-
 
 \subsubsection{Skin Effect}
 
@@ -373,7 +370,7 @@ as can be seen from the equation above,  the important factor is the penetration
 
 \subsubsection{Secondary-Winding}
 
-There are different analytical models to estimate the AC resistance in round conductors (e.g. high voltage cables that can be used in the secondary winding), such as presented in \cite{Sullivan2003,Ferreira1994}. Although, the method presented by Dowell in \cite{Dowell1966} is assumed as the most established method. In this method Dowell introduced a porosity factor to convert the round conductors to square conductors and then convert to foil type conductors.
+There are different analytical models to estimate the AC resistances of round conductors (e.g. high voltage cables that can be used in the secondary winding), such as presented in \cite{Sullivan2003,Ferreira1994}. Although, the method presented by Dowell in \cite{Dowell1966} is assumed as the most established method. In this method Dowell introduced a porosity factor to convert the round conductors to square conductors and then convert to foil type conductors.
 
 Equivalent thickness of a round conductor can be defined as \cite{Dowell1966}:
 
@@ -387,7 +384,7 @@ where $d$ is the diameter of the round conductor and $d_w$ is the thickness of t
 
 \section{Core Losses}
 
-The core losses mainly depend on the material type, flux density and operating frequency. The most common way to estimate the core losses is to use a power equation, which is known as the Steinmetz equation:
+The core losses mainly depend on the material type, flux density and operating frequency. Although, there are many methods to estimate the core losses as reviewed in \cite{Shen2006}, the most common method is to use a power equation, which is known as the Steinmetz equation:
 
 \begin{equation}
  P_{core} = K f^a B^b
@@ -410,8 +407,6 @@ Various methods are developed to model the core losses under non-sinusoidal exci
 \end{itemize}
 
 In \cite{Venkatachalam2002}, a model has been developed to predict the non-sinusoidal excitation losses using just the standard Steinmetz parameters. The model calculates the total loss by adding the losses in major and minor loops in the voltage waveform.
-
-
 
 Although these methods can provide more accurate results compared to Fourier transform method, they all require extra measurement steps to determine the material characteristics at different operating frequencies and waveforms. Therefore, it is impractical to use these models without experimental study at first. Therefore, using standard Steinmetz equation with harmonics contents is an ideal choice for analytical core loss estimation.
 
@@ -461,7 +456,7 @@ A Matlab model is developed to estimate the transformer models and calculate cop
 
 \subsection{Estimation of Winding Parameters}
 
-It is assumed from the WP 2 report that, foil type conductors are the most suitable option for the low voltage side. On the high voltage side, circular stranded cables are more suitable with their mechanical strength and increased dielectric insulation.
+It is assumed from the WP 2 report that, foil type conductors are the most suitable option for the low voltage side. On the high voltage side, circular stranded cables are more suitable with their mechanical strength and increased dielectric insulation. It is stated in \cite{Morren2002} that, using standard high-voltage cables has advantages such as: elimination of oil insulation, and better distribution of electric field in round conductors. 
 
 The thickness of the coil is chosen according to the skin depth at the operating frequency. The conductor thickness is selected to be less than 1.5 times skin depth, however, actual foil conductor thickness is limited to standard wire gauges (e.g. 1 mm, 1.6 mm, 2 mm, 2.25 mm...). The frequency of the transformer versus the most suitable foil coil thickness is plotted in Fig.~\ref{primary_thickness}. For example, for operating frequencies between 2 kHz and 3 kHz, the most suitable conductor thickness is 2 mm.
 
@@ -520,6 +515,8 @@ HV Cable & HDPE & 19 kV/mm \\
 
 The most important parameter of the core is the cross-section area, which depends on the operating frequency, flux density in the core and the number of turns. Assuming a square cross-section area, the thickness of the core as  a function of the primary number of turns is estimated as in Fig.~\ref{core_dimensions}, and similarly graphs for the secondary number of turns are presented in Fig.~\ref{secondary_core_dimensions}. The operating flux density of the core is assumed as 1.1 T, the primary voltage magnitude is assumed as 3 kV, and the secondary voltage magnitude is assumed as 300 kV.
 
+Although, it is not presented in this report, the main dimensions and the mass of the core is calculated in the Matlab models and these figures can be used to estimate the overall weight and cost of the transfomer.
+
 \begin{figure}[]
   \centering
     \includegraphics[]{primary_Nturns_core}
@@ -538,17 +535,24 @@ The most important parameter of the core is the cross-section area, which depend
 \end{figure}
 
 
-Core mass calculations to be added.
-
 \section{Conclusion}
 
+In this report, a review of core materials and loss calculation methods for medium frequency transformers are presented. Following conclusions can be drawn from the report:
+
+\textbf{Core Material}: Although electrical steel laminations are commonly used in line frequency transformers, they are not suitable in medium frequency transformers with their increased losses. Ferrites have very low losses, but they also have a very low operating flux density, which makes them unsitable for high power applications. Nano-crystalline material is considered to be most suitable material with its high flux density and very low losses at high frequencies. Vacuumschmelze's Vitroperm500F is a popular material, that can be used. Amorphous materials can be used to reduce the core mass, as their operating flux densities are 25\% higher than nano-crystalline materials, but they have higher losses.
+
+\textbf{Core Type}: Various transformer core topologies are compared in \cite{Agheb2012}. It is considered that core type transformer is the simplest and easiest to manufacture, and hence the most suitable option as the initial prototype.
+
+\textbf{Winding Type}: In the primary field windings, the most suitable winding type is foil-type conductors, as low thickness is required for minimum eddy current loss, but a large conductor area is required to conduct high input current. It is possible to use two parallel primary windings to double the conducting area. Standard HV cables are proposed to be used in the secondary winding in order to simplify the manufacturing and insulation.Multi-stranded insulated conductors can be used to minimize the eddy current losses as a replacement to Litz wires.
+
+Matlab models are developed to estimate basic dimensions of the transformer core and winding. These parameters can be used as an iput to finite element models or for a more detailed analytical models. In order to calculate the core losses accurately, the loss mapping of the material with magnetic flux and operating frequency should be known. This can be obtained from the manufacturer directly for some common materials, but a better option is to setup a small experimental rig to obtain these values.
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
 \bibliographystyle{unsrt}
 \clearpage
-\bibliography{../refler/NAREC}
+\bibliography{./NAREC}
 
 %----------------------------------------------------------------------------------------
 
