@@ -209,7 +209,7 @@ The permeability of VitroPerm 500F is significantly higher than ferrite as shown
 \begin{figure}[]
   \centering
     \includegraphics[scale=0.3]{vitroterm_permeability}
-  \caption{Permeability change of different VitroPerm materials with frequency \cite{vitroterm_toroidal}.}
+  \caption{Permeability change of different VitroPerm materials with frequency \cite{vitroperm_toroidal}.}
   \label{vitroterm_permeability}
 \end{figure}
 
@@ -376,8 +376,7 @@ Equivalent thickness of a round conductor can be defined as \cite{Dowell1966}:
 
 \begin{equation}
  d_w =  \sqrt{\frac{\pi}{4}} d 
-
- \end{equation}
+\end{equation}
 
 where $d$ is the diameter of the round conductor and $d_w$ is the thickness of the equivalent square conductor. Then, similar technique can be applied to convert square conductor to foil type conductor using a second porosity factor as shown in \cite{Villar2010}. Therefore, the AC resistance of the round conductor can be expressed similarly to equation (\ref{R_ac_foil})) as given in \cite{Villar2010}.
 
@@ -435,7 +434,6 @@ Harmonic Order & Magnitude\\
 11 & 0.116 \\
 13 & 0.098 \\
 \hline
-\end{tabular} 
 \end{tabular} 
 \end{center}
 \caption{Fourier series magnitudes relative to the magnitude of the square wave.}
@@ -495,7 +493,6 @@ HV Cable & PVC & 10-10 kV/mm\\
 HV Cable & HDPE & 19 kV/mm \\
 \hline
 \end{tabular} 
-\end{tabular} 
 \end{center}
 \caption{Dry-type insulation dielectric strengths \cite{Ortiz2010}.}
 \label{dielectric}
@@ -515,7 +512,7 @@ HV Cable & HDPE & 19 kV/mm \\
 
 The most important parameter of the core is the cross-section area, which depends on the operating frequency, flux density in the core and the number of turns. Assuming a square cross-section area, the thickness of the core as  a function of the primary number of turns is estimated as in Fig.~\ref{core_dimensions}, and similarly graphs for the secondary number of turns are presented in Fig.~\ref{secondary_core_dimensions}. The operating flux density of the core is assumed as 1.1 T, the primary voltage magnitude is assumed as 3 kV, and the secondary voltage magnitude is assumed as 300 kV.
 
-Although, it is not presented in this report, the main dimensions and the mass of the core is calculated in the Matlab models and these figures can be used to estimate the overall weight and cost of the transfomer.
+Although, it is not presented in this report, the main dimensions and the mass of the core is calculated in the Matlab models and these figures can be used to estimate the overall weight and cost of the transformer.
 
 \begin{figure}[]
   \centering
@@ -539,13 +536,13 @@ Although, it is not presented in this report, the main dimensions and the mass o
 
 In this report, a review of core materials and loss calculation methods for medium frequency transformers are presented. Following conclusions can be drawn from the report:
 
-\textbf{Core Material}: Although electrical steel laminations are commonly used in line frequency transformers, they are not suitable in medium frequency transformers with their increased losses. Ferrites have very low losses, but they also have a very low operating flux density, which makes them unsitable for high power applications. Nano-crystalline material is considered to be most suitable material with its high flux density and very low losses at high frequencies. Vacuumschmelze's Vitroperm500F is a popular material, that can be used. Amorphous materials can be used to reduce the core mass, as their operating flux densities are 25\% higher than nano-crystalline materials, but they have higher losses.
+\textbf{Core Material}: Although electrical steel laminations are commonly used in line frequency transformers, they are not suitable in medium frequency transformers with their increased losses. Ferrites have very low losses, but they also have a very low operating flux density, which makes them unsuitable for high power applications. Nano-crystalline material is considered to be most suitable material with its high flux density and very low losses at high frequencies. Vacuumschmelze's Vitroperm500F is a popular material, that can be used. Amorphous materials can be used to reduce the core mass, as their operating flux densities are 25\% higher than nano-crystalline materials, but they have higher losses.
 
 \textbf{Core Type}: Various transformer core topologies are compared in \cite{Agheb2012}. It is considered that core type transformer is the simplest and easiest to manufacture, and hence the most suitable option as the initial prototype.
 
 \textbf{Winding Type}: In the primary field windings, the most suitable winding type is foil-type conductors, as low thickness is required for minimum eddy current loss, but a large conductor area is required to conduct high input current. It is possible to use two parallel primary windings to double the conducting area. Standard HV cables are proposed to be used in the secondary winding in order to simplify the manufacturing and insulation.Multi-stranded insulated conductors can be used to minimize the eddy current losses as a replacement to Litz wires.
 
-Matlab models are developed to estimate basic dimensions of the transformer core and winding. These parameters can be used as an iput to finite element models or for a more detailed analytical models. In order to calculate the core losses accurately, the loss mapping of the material with magnetic flux and operating frequency should be known. This can be obtained from the manufacturer directly for some common materials, but a better option is to setup a small experimental rig to obtain these values.
+Matlab models are developed to estimate basic dimensions of the transformer core and winding. These parameters can be used as an input to finite element models or for a more detailed analytical models. In order to calculate the core losses accurately, the loss mapping of the material with magnetic flux and operating frequency should be known. This can be obtained from the manufacturer directly for some common materials, but a better option is to setup a small experimental rig to obtain these values.
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
