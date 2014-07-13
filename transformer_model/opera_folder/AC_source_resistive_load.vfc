@@ -1,0 +1,114 @@
+<VfcCircuit>
+ <VfcCircuitPreferences Analysis="&quot;Single frequency&quot;" Program="&quot;Opera-3d&quot;"/>
+ <VfcComponent InScene="1" Width="4" X="6" Y="-4" Direction="1" Reflected="0" Type="&quot;Winding&quot;" Name="SECONDARY" Version="1">
+  <VfcComponentProperties>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="ConductorSet" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="CircuitType" PropertyValue="Filamentary"/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="MeshingType" PropertyValue="Filament"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="nfilaments" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Ω/m" PropertyChoice="0" PropertyName="RPUL" PropertyValue="1.6e-8"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Turns" PropertyValue="500"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="m" PropertyChoice="0" PropertyName="Length" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="ModelSymmetry" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="SymmFactor" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="0" PropertyUnitString="MΩ" PropertyChoice="0" PropertyName="ProbeResistance" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="A" PropertyChoice="0" PropertyName="InitialCurrent" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="MutualCoupling" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="showLabel" PropertyValue="Name only"/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="DefaultLabelOffset" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="labelOffsetPosition" PropertyValue="1.25;0"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Font" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Colour" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="showDirectionArrow" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="showDirectionArrowOffset" PropertyValue="1.3"/>
+  </VfcComponentProperties>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="4" X="-2" Y="-4" Direction="1" Reflected="0" Type="&quot;Winding&quot;" Name="PRIMARY" Version="1">
+  <VfcComponentProperties>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="ConductorSet" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="CircuitType" PropertyValue="Filamentary"/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="MeshingType" PropertyValue="Filament"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="nfilaments" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Ω/m" PropertyChoice="0" PropertyName="RPUL" PropertyValue="1.6e-8"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Turns" PropertyValue="5"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="m" PropertyChoice="0" PropertyName="Length" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="ModelSymmetry" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="SymmFactor" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="0" PropertyUnitString="MΩ" PropertyChoice="0" PropertyName="ProbeResistance" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="A" PropertyChoice="0" PropertyName="InitialCurrent" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="MutualCoupling" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="showLabel" PropertyValue="Name only"/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="DefaultLabelOffset" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="labelOffsetPosition" PropertyValue="1.25;0"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Font" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Colour" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="showDirectionArrow" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="showDirectionArrowOffset" PropertyValue="1.3"/>
+  </VfcComponentProperties>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="2" X="-12" Y="-1" Direction="3" Reflected="0" Type="&quot;AC Voltage&quot;" Name="V1">
+  <VfcComponentProperties>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="V" PropertyChoice="0" PropertyName="PeakV" PropertyValue="3000"/>
+   <VfcComponentProperty PropertyUnit="0" PropertyUnitString="Hz" PropertyChoice="0" PropertyName="Frequency" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Phase" PropertyValue="0"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="s" PropertyChoice="0" PropertyName="RampTime" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="showLabel" PropertyValue="Name only"/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="DefaultLabelOffset" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="labelOffsetPosition" PropertyValue="1.25;0"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Font" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Colour" PropertyValue=""/>
+  </VfcComponentProperties>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="10" X="-12" Y="2" Direction="0" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="1" X="-2" Y="2" Direction="3" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="10" X="-12" Y="-6" Direction="0" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="1" X="-2" Y="-5" Direction="3" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="4" X="15" Y="-4" Direction="1" Reflected="0" Type="&quot;Resistor&quot;" Name="R1">
+  <VfcComponentProperties>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Ω" PropertyChoice="0" PropertyName="Resistance" PropertyValue="15e3"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="showLabel" PropertyValue="Name only"/>
+   <VfcComponentProperty PropertyChoice="1" PropertyName="DefaultLabelOffset" PropertyValue="Yes"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="labelOffsetPosition" PropertyValue="1.25;0"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Font" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="Colour" PropertyValue=""/>
+   <VfcComponentProperty PropertyChoice="2" PropertyName="showDirectionArrow" PropertyValue="Selected"/>
+   <VfcComponentProperty PropertyChoice="0" PropertyName="showDirectionArrowOffset" PropertyValue="0"/>
+  </VfcComponentProperties>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="9" X="6" Y="-6" Direction="0" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="1" X="15" Y="-5" Direction="3" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="1" X="6" Y="-5" Direction="3" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="9" X="6" Y="2" Direction="0" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="1" X="15" Y="1" Direction="1" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="1" X="6" Y="1" Direction="1" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="2" X="-12" Y="2" Direction="3" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+ <VfcComponent InScene="1" Width="2" X="-12" Y="-6" Direction="1" Reflected="0" Type="&quot;Wire&quot;" Name="">
+  <VfcComponentProperties/>
+ </VfcComponent>
+</VfcCircuit>
