@@ -1,10 +1,22 @@
 /RESET HISTORY
 UNDO STATE=ROOT |  HISTORY STATES=0 
 
+/Dimensions (for Nprimary=8)
+/Core
+#core_width=1100
+#core_height=750
+#core_thickness=275
+
+/Coil
+#primary_Rin=202
+#primary_Rout=245
+#primary_height=192
+
+#secondary_Rin=215
+#secondary_Rout=555
+#secondary_height=192
+
 /Create core
-#core_width=700
-#core_height=800
-#core_thickness=200
 BLOCK Name='Core' X0=0 Y0=0 Z0=0 X1=#core_width Y1=#core_height Z1=#core_thickness MATERIALLABEL='nanocrystalline' LEVEL=10
 
 /Cut core half
@@ -19,15 +31,10 @@ COMBINE OPERATION=SUBTRACT +REGULAR
 BLOCK Name='CoreGap' X0=#core_thickness Y0=#core_thickness Z0=0 X1=#core_width-#core_thickness Y1=#core_height-#core_thickness Z1=#core_thickness MATERIALLABEL='Air' LEVEL=20
 
 /Primary Coil
-#primary_Rin=150
-#primary_Rout=200
-#primary_height=400
+
 SOLENOID OPTION=NEW -KEEP XP1=#primary_Rin YP1=0 XP2=#primary_Rin YP2=#primary_height XP3=#primary_Rout YP3=#primary_height XP4=#primary_Rout YP4=0 CU1=0 CU2=0 CU3=0 CU4=0 INCIRCUIT=YES REVERSE=NO CIRCUITELEMENT='primary' TOLERANCE=0.001 LCNAME='Global coordinate system' XCEN2=0.5*#core_thickness YCEN2=#core_thickness ZCEN2=0.5*#core_thickness THETA2=0 PHI2=0 PSI2=0 RXY=0 RYZ=0 RZX=0 SYMMETRY=1 MODELCOMPONENT=NO
 
 /Secondary Coil
-#secondary_Rin=150
-#secondary_Rout=250
-#secondary_height=400
 SOLENOID OPTION=NEW -KEEP XP1=#secondary_Rin YP1=0 XP2=#secondary_Rin YP2=#secondary_height XP3=#secondary_Rout YP3=#secondary_height XP4=#secondary_Rout YP4=0 CU1=0 CU2=0 CU3=0 CU4=0 INCIRCUIT=YES REVERSE=NO CIRCUITELEMENT='secondary' TOLERANCE=0.001 LCNAME='Global coordinate system' XCEN2=#core_width-0.5*#core_thickness YCEN2=#core_thickness ZCEN2=0.5*#core_thickness THETA2=0 PHI2=0 PSI2=0 RXY=0 RYZ=0 RZX=0 SYMMETRY=1 MODELCOMPONENT=NO
 
 
