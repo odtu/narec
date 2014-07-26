@@ -4,12 +4,12 @@ clear all
 %% Transformer specifications
 %All dimensions in mm
 
-frequency = 2000; %Operating frequency
+frequency = 1000; %Operating frequency
 primary.voltage = 3e3;
 rated_power = 6.5e6; % 6.5 MVA transformer pf=1
 secondary.voltage = 300e3;
 
-primary.N_turns = 5;
+primary.N_turns = 8;
 
 %% Flux Current Insulation
 Bmax = 1.1; %Maximum operating flux density (T)
@@ -19,7 +19,7 @@ operating_temp = 110; %C
 %Insulation
 % Insulation Dimensions
 primary.insulation_between_coils = 1; %Insulation thickness between two adjacent coils
-primary.inner_insulation = 10; % LV insulation between winding and core
+primary.inner_insulation = 6; % LV insulation between winding and core
 primary.outer_insulation = 10; % LV last layer of insulation between winding and air
 
 primary.gap_between_secondary = 50; % horizontal gap between LV and HV side
@@ -101,10 +101,10 @@ secondary.total_height = primary.total_height;
 secondary.winding_height = secondary.total_height - 2*secondary.outer_insulation;
 %secondary.winding_width = round(secondary.winding_area/secondary.winding_height);
 
-secondary.Nlayer_vertical = round(secondary.winding_height/(secondary.coil_diameter + secondary.insulation_between_coils);
+secondary.Nlayer_vertical = round(secondary.winding_height)/(secondary.coil_diameter + secondary.insulation_between_coils);
 secondary.Nlayer_horizontal = round(secondary.N_turns/secondary.Nlayer_vertical);
 
-secondary.winding_width =  secondary.Nlayer_horizontal*(secondary.coil_diameter + secondary.insulation_between_coils); 
+secondary.winding_width =  secondary.Nlayer_horizontal*(secondary.coil_diameter + secondary.insulation_between_coils);
 secondary.winding_Rin = core.thickness/sqrt(2) + secondary.inner_insulation;
 secondary.mean_coil_length = 2*pi*(secondary.winding_Rin + 0.5*secondary.winding_width);
 secondary.Rout = secondary.winding_Rin + secondary.winding_width + secondary.outer_insulation;
