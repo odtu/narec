@@ -1,0 +1,60 @@
+Transformer Designs:
+
+
+Design-A: N_turn_primary=5
+
+
+
+Hi Mark,
+
+Sorry, it takes longer than I anticipated as I have to design the transformer from scratch.
+Here are some results. I obtained the transformer parameters from the Matlab model:
+
+Primary coil: (Foil type)
+Coil thickness: 3.15 mm
+Coil height: 172 mm
+Number of turns: 8
+Mean length per turn: 1377 mm
+AC resistance: 0.011 Ohm
+
+Secondary coil: (Circular)
+Coil area (6mm^2), diameter: 2.764 mm
+Total winding height: 192 mm
+Nturns: 800 (vertical:20, horizontal:40 layers)
+Total winding width: 318 mm
+Mean length per turn: 2361 mm
+
+Core:
+Cross-section: 278 x 278 mm
+Horizontal gap: 572 mm
+Vertical gap: 192 mm
+Core height: 748 mm
+Core width: 1128 mm
+Volume: 0.21 m^3
+Mass: ~1500 kg
+
+Core Material:
+Nano-crystalline (Vitroperm 500)
+B_saturation: 1.2 T
+B-H curve: attached
+
+Core losses:
+From the manuals I was only able to find the core losses between 20 kHz and 100 kHz. I have extrapolated the loss data for 1-20 kHz using this data and datasheets of similar materials.
+The loss data (flux density vs loss density (W/kg) vs frequency) presented in the data-sheet are linear in log-x and log-y axes. The core losses increases with the square of the flux density magnitude.
+
+I have attached a spreadsheet presenting the losses between 1 kHz and 20 kHz for various operating flux densities, which can be used in the optimization algorithm.
+For information at 1 T loss density varies as follows:
+1 kHz    0.25 W/kg
+5 kHz    4.8 W/kg
+10 kHz    17.5 W/kg
+15 kHz    37.1 W/kg
+20 kHz    63.3 W/kg
+
+Assuming a 1500 kg core and 1.2 T operating flux density, total core losses is around 600 W. Increasing the operating frequency will reduce the mass of the core, but increase the core loss density.
+
+I hope it helps for now.
+
+Regards,
+
+Ozan
+
