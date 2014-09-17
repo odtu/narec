@@ -552,5 +552,267 @@ Matlab models are developed to estimate basic dimensions of the transformer core
 \bibliography{./NAREC}
 
 %----------------------------------------------------------------------------------------
+\clearpage
+
+\section{Design Options}
+
+In this section, four transformer designs will be presented with different primary number of turns. The initial designs are developed the Matlab model described in the previous section.
+
+The main dimensions in the analytical design are presented in Fig.~\ref{transformer_dimensions}.
+
+\begin{figure}[]
+  \centering
+    \includegraphics[width=0.5\textwidth]{transformer_dimensions}
+   \includegraphics[width=0.45\textwidth]{transformer_dimensions_cross_section}
+  \caption{Main dimensions of the transformer. a) Side-view, b) Cross section of the core and winding.}
+  \label{transformer_dimensions}
+\end{figure}
+
+Following assumptions are made in the design process:
+
+\begin{itemize}
+\item Operating Frequency: 1 kHz
+\item Core Material: Vitroperm 500F
+\item Operating Flux Density: 1.1 T (90\% of the saturation flux density)
+\item Operating  Temp: 110 C (for resistance calculations)
+\item Current Density: 4 A/mm$^2$ (in the conductor).
+\item Permeability: $\mu = 30000$
+\item Core Type: C-core with square cross-section.
+\item LV Coil Type: Foil type conductor. The thickness is calculated considering eddy current loss as described in the previous section.
+\item HV Coil Type: Round insulated HV cable.
+\item Inner Insulation Thickness(Insulation between winding and the core): 6 mm for the low-voltage side, 20 mm for the high-voltage side.
+\item Outer Insulation Thickness: 10 mm for the low-voltage side, 20 mm for the high-voltage side.
+\item Insulation Thickness Between Conductors: 1 mm for the primary coil, 5 mm for the secondary.
+\item Gap Between LV and HV Winding: 50 mm
+\end{itemize}
+
+Four Designs are presented in this report with varying primary(low-voltage) number of turns:
+
+\begin{itemize}
+\item Design A: $Nturns_{LV}=5$
+\item Design B: $Nturns_{LV}=8$
+\item Design C: $Nturns_{LV}=12$
+\item Design D: $Nturns_{LV}=15$
+\end{itemize}
+
+The specifications of these designs are presented through Table~\ref{design_A} to Table~\ref{design_D}. Core mass, LV and HV conductor length variation are presented in Table~\ref{conductor_length}. From the table, following can be concluded:
+\begin{itemize}
+\item Core mass reduces as the number of turns increases.
+\item The length of both windings increase with number of turns. However, increase in the LV winding length is less compared to HV winding length. For example, when primary number of turns is increased from  5 to 15, the length of the LV winding just doubles, however, the length of HV winding quadruples, which makes the losses in the HV side more dominant. This is due to thick insulation around the HV cable and high number of turns.
+\item Assuming the core loss is proportional to core mass and the copper loss is proportional to conductor length, the core loss reduces with increasing number of turns, whereas the copper loss increases with increasing number of turns.
+\end{itemize}
+
+The optimum number of turns is selected as 8 for the FEA simulations. FEA simulations are performed with Opera 3D software and the model building scripts can be found in the project folder.
+
+\begin{table}[]
+\begin{center}
+\begin{tabular}{lcccc}
+& $Nturns_{LV}$ & LV Winding & HV Winding & Core Mass \\
+\hline
+Design A & 5 & 8.3 m & 1159 m & 2477 kg \\
+Design B & 8 & 11.0 m & 1889 m & 1500 kg \\
+Design C & 12 & 14.4 m & 3146 m & 1037 kg \\
+Design D & 15 & 17.0 m & 4358 m & 877 kg \\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Variation of conductor length and core mass with number of turns.}
+\label{conductor_length}
+\end{table}
+
+\begin{table}[]
+\begin{center}
+\begin{tabular}{lc}
+Primary(LV) & Nturns=5\\
+\hline
+Coil Height & 172 mm \\
+Total Height & 192 mm \\
+Coil Thickness & 3.15 mm\\
+Winding Width & 20.75 \\
+R$_{in}$ & 254 mm \\
+R$_{out}$ & 285 mm \\
+Mean Length & 1662 mm \\
+AC Resistance & 0.0034 $\Omega$ \\
+\hline
+Secondary (HV) \\
+Coil Area & 6 mm$^2$\\
+Winding Height & 152 mm \\ 
+Total Height & 192 mm \\
+Ncoil horizontal & 25 \\
+Ncoil vertical & 20 \\
+Winding Width & 202 mm \\
+R$_{in}$ & 268 mm \\
+R$_{out}$ & 490 mm \\
+Mean Length & 2319 mm \\
+\hline
+Core \\
+Thickness & 351 mm \\
+Cross Section & 0.1228 m$^2$\\
+Horizontal Gap & 474 mm \\
+Vertical Gap & 192 mm \\
+Height & 894 mm \\
+Width & 1176 mm \\
+Volume & 0.337 m$^3$ \\
+Mass & 2477 kg \\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Design-A ($Nturns_{LV}=5$) winding and core parameters.}
+\label{design_A}
+\end{table}
+
+
+\begin{table}[]
+\begin{center}
+\begin{tabular}{lc}
+Primary (LV) & Nturns=8\\
+\hline
+Coil Height & 172 mm \\
+Total Height & 192 mm \\
+Coil Thickness & 3.15 mm\\
+Winding Width & 33 mm \\
+R$_{in}$ & 202 mm \\
+R$_{out}$ & 245 mm \\
+Mean Length & 1377 mm \\
+AC Resistance & 0.011 $\Omega$ \\
+\hline
+Secondary (HV) \\
+Coil Area & 6 mm$^2$\\
+Winding Height & 152 mm \\ 
+Total Height & 192 mm \\
+Ncoil horizontal & 40 \\
+Ncoil vertical & 20 \\
+Winding Width & 318 mm \\
+R$_{in}$ & 216.5 mm \\
+R$_{out}$ & 555 mm \\
+Mean Length & 2361 mm \\
+\hline
+Core \\
+Thickness & 278 mm \\
+Cross Section & 0.0767 m$^2$\\
+Horizontal Gap & 572 mm \\
+Vertical Gap & 192 mm \\
+Height & 748 mm \\
+Width & 1148 mm \\
+Volume & 0.204 m$^3$ \\
+Mass & 1500 kg \\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Design-B ($Nturns_{LV}=8$) winding and core parameters.}
+\label{design_B}
+\end{table}
+
+\begin{table}[]
+\begin{center}
+\begin{tabular}{lc}
+Primary (LV) & Nturns=12\\
+\hline
+Coil Height & 172 mm \\
+Total Height & 192 mm \\
+Coil Thickness & 3.15 mm\\
+Winding Width & 50 mm \\
+R$_{in}$ & 166.5 mm \\
+R$_{out}$ & 226 mm \\
+Mean Length & 1202 mm \\
+AC Resistance & 0.0323 $\Omega$ \\
+\hline
+Secondary (HV) \\
+Coil Area & 6 mm$^2$\\
+Winding Height & 152 mm \\ 
+Total Height & 192 mm \\
+Ncoil horizontal & 60 \\
+Ncoil vertical & 20 \\
+Winding Width & 473 mm \\
+R$_{in}$ & 180.5 mm \\
+R$_{out}$ & 674 mm \\
+Mean Length & 2622 mm \\
+\hline
+Core \\
+Thickness & 227 mm \\
+Cross Section & 0.0512 m$^2$\\
+Horizontal Gap & 572 mm \\
+Vertical Gap & 192 mm \\
+Height & 646 mm \\
+Width & 1177 mm \\
+Volume & 0.141 m$^3$ \\
+Mass & 1037 kg \\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Design-C ($Nturns_{LV}=12$) winding and core parameters.}
+\label{design_C}
+\end{table}
+
+
+\begin{table}[]
+\begin{center}
+\begin{tabular}{lc}
+Primary (LV) & Nturns=15\\
+\hline
+Coil Height & 172 mm \\
+Total Height & 192 mm \\
+Coil Thickness & 3.15 mm\\
+Winding Width & 62.5 mm \\
+R$_{in}$ & 149.5 mm \\
+R$_{out}$ & 222 mm \\
+Mean Length & 1135 mm \\
+AC Resistance & 0.0593 $\Omega$ \\
+\hline
+Secondary (HV) \\
+Coil Area & 6 mm$^2$\\
+Winding Height & 152 mm \\ 
+Total Height & 192 mm \\
+Ncoil horizontal & 75 \\
+Ncoil vertical & 20 \\
+Winding Width & 597 mm \\
+R$_{in}$ & 163 mm \\
+R$_{out}$ & 781 mm \\
+Mean Length & 2905 mm \\
+\hline
+Core \\
+Thickness & 203 mm \\
+Cross Section & 0.0409 m$^2$\\
+Horizontal Gap & 850 mm \\
+Vertical Gap & 192 mm \\
+Height & 598 mm \\
+Width & 1256 mm \\
+Volume & 0.119 m$^3$ \\
+Mass & 877 kg \\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Design-D ($Nturns_{LV}=15$) winding and core parameters.}
+\label{design_D}
+\end{table}
+
+\clearpage
+
+\section{Core Losses}
+Core material is chosen as nano-crystalline (Vitroperm 500), the operating flux density is determined as 1.1 T.  In the material manual \cite{Vacuumschmelze2003}, the core losses between 20 kHz and 100 kHz are presented. The loss data between 1 kHz  and 10 kHz have been extrapolated using this data and data-sheets of similar materials.  The core losses increase with the square of the magnitude of the flux density. 
+
+The core loss density variation with varying frequency is presented in Table~\ref{core_loss_vs_freq}.
+ 
+\begin{table}[]
+\begin{center}
+\begin{tabular}{rr}
+Frequency & Loss \\
+\hline
+1 kHz &  0.25 W/kg\\
+5 kHz &  4.8 W/kg\\
+10 kHz & 17.5 W/kg\\
+15 kHz & 37.1 W/kg\\
+20 kHz &  63.3 W/kg\\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Variation of core loss of Vitroperm 500 with frequency.}
+\label{core_loss_vs_freq}
+\end{table}
+
+The loss density (W/kg) data as a function of the flux density presented in the data-sheet are linear in log-x and log-y axes.
+
+I have attached a spreadsheet presenting the losses between 1 kHz and 20 kHz for various operating flux densities, which can be used in the optimization algorithm.
+For information at 1 T loss density varies as follows:
 
 \end{document}
