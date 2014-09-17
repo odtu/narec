@@ -543,18 +543,10 @@ In this report, a review of core materials and loss calculation methods for medi
 \textbf{Winding Type}: In the primary field windings, the most suitable winding type is foil-type conductors, as low thickness is required for minimum eddy current loss, but a large conductor area is required to conduct high input current. It is possible to use two parallel primary windings to double the conducting area. Standard HV cables are proposed to be used in the secondary winding in order to simplify the manufacturing and insulation.Multi-stranded insulated conductors can be used to minimize the eddy current losses as a replacement to Litz wires.
 
 Matlab models are developed to estimate basic dimensions of the transformer core and winding. These parameters can be used as an input to finite element models or for a more detailed analytical models. In order to calculate the core losses accurately, the loss mapping of the material with magnetic flux and operating frequency should be known. This can be obtained from the manufacturer directly for some common materials, but a better option is to setup a small experimental rig to obtain these values.
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
 
-\bibliographystyle{unsrt}
-\clearpage
-\bibliography{./NAREC}
-
-%----------------------------------------------------------------------------------------
 \clearpage
 
-\section{Design Options}
+\section{Sample Design}
 
 In this section, four transformer designs will be presented with different primary number of turns. The initial designs are developed the Matlab model described in the previous section.
 
@@ -655,6 +647,8 @@ Width & 1176 mm \\
 Volume & 0.337 m$^3$ \\
 Mass & 2477 kg \\
 \hline
+Approx. Core Loss & 867 W (1 kHz) \\
+\hline
 \end{tabular} 
 \end{center}
 \caption{Design-A ($Nturns_{LV}=5$) winding and core parameters.}
@@ -697,6 +691,8 @@ Width & 1148 mm \\
 Volume & 0.204 m$^3$ \\
 Mass & 1500 kg \\
 \hline
+Approx. Core Loss & 525 W (1 kHz) \\
+\hline
 \end{tabular} 
 \end{center}
 \caption{Design-B ($Nturns_{LV}=8$) winding and core parameters.}
@@ -737,6 +733,8 @@ Height & 646 mm \\
 Width & 1177 mm \\
 Volume & 0.141 m$^3$ \\
 Mass & 1037 kg \\
+\hline
+Approx. Core Loss & 363 W (1 kHz) \\
 \hline
 \end{tabular} 
 \end{center}
@@ -780,6 +778,8 @@ Width & 1256 mm \\
 Volume & 0.119 m$^3$ \\
 Mass & 877 kg \\
 \hline
+Approx. Core Loss & 307 W (1 kHz) \\
+\hline
 \end{tabular} 
 \end{center}
 \caption{Design-D ($Nturns_{LV}=15$) winding and core parameters.}
@@ -789,9 +789,9 @@ Mass & 877 kg \\
 \clearpage
 
 \section{Core Losses}
-Core material is chosen as nano-crystalline (Vitroperm 500), the operating flux density is determined as 1.1 T.  In the material manual \cite{Vacuumschmelze2003}, the core losses between 20 kHz and 100 kHz are presented. The loss data between 1 kHz  and 10 kHz have been extrapolated using this data and data-sheets of similar materials.  The core losses increase with the square of the magnitude of the flux density. 
+Core material is chosen as nano-crystalline (Vitroperm 500), the operating flux density is determined as 1.1 T.  In the material manual \cite{Vacuumschmelze2003}, the core losses between 20 kHz and 100 kHz are presented. The loss data between 1 kHz  and 10 kHz have been extrapolated using this data and data-sheets of similar materials.  
 
-The core loss density variation with varying frequency is presented in Table~\ref{core_loss_vs_freq}.
+The core loss density variation at 1 T with varying frequency is presented in Table~\ref{core_loss_vs_freq}. In Table~\ref{core_loss_vs_freq_B} core loss variation with frequency and flux density is presented. It can be seen from the table that the core losses increase with the square of the magnitude of the flux density. 
  
 \begin{table}[]
 \begin{center}
@@ -806,13 +806,64 @@ Frequency & Loss \\
 \hline
 \end{tabular} 
 \end{center}
-\caption{Variation of core loss of Vitroperm 500 with frequency.}
+\caption{Variation of core loss of Vitroperm 500 with frequency at 1 T.}
 \label{core_loss_vs_freq}
 \end{table}
 
-The loss density (W/kg) data as a function of the flux density presented in the data-sheet are linear in log-x and log-y axes.
+\begin{table}[]
+\begin{center}
+\begin{tabular}{rrr}
+Frequency(Hz) & Flux Density (T) & Loss density (W/kg) \\
+\hline
+1000 & 0 & 0 \\
+1000 & 0.2 & 0.01 \\
+1000 & 0.4 & 0.04 \\
+1000 & 0.6 & 0.09 \\
+1000 & 0.8 & 0.16 \\
+1000 & 1 & 0.25 \\
+1000 & 1.2 & 0.35 \\
+\hline
+2000 & 0 & 0 \\
+2000 & 0.2 & 0.04 \\
+2000 & 0.4 & 0.14 \\
+2000 & 0.6 & 0.32 \\
+2000 & 0.8 & 0.56 \\
+2000 & 1 & 0.88 \\
+2000 & 1.2 & 1.27 \\
+\hline
+5000 & 0 & 0 \\
+5000 & 0.2 & 0.2 \\
+5000 & 0.4 & 0.77 \\
+5000 & 0.6 & 1.73 \\
+5000 & 0.8 & 3.09 \\
+5000 & 1 & 4.83 \\
+5000 & 1.2 & 6.95 \\
+\hline
+10000 & 0 & 0 \\
+10000 & 0.2 & 0.7 \\
+10000 & 0.4 & 2.8 \\
+10000 & 0.6 & 6.3 \\
+10000 & 0.8 & 11.19 \\
+10000 & 1 & 17.48 \\
+10000 & 1.2 & 25.17 \\
+\hline
+\end{tabular} 
+\end{center}
+\caption{Variation of core loss of Vitroperm 500 with frequency and flux density.}
+\label{core_loss_vs_freq_B}
+\end{table}
 
-I have attached a spreadsheet presenting the losses between 1 kHz and 20 kHz for various operating flux densities, which can be used in the optimization algorithm.
-For information at 1 T loss density varies as follows:
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+\clearpage
+\bibliography{./NAREC}
+
+%----------------------------------------------------------------------------------------
+
+
+
 
 \end{document}
