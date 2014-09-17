@@ -9,7 +9,7 @@ primary.voltage = 3e3;
 rated_power = 6.5e6; % 6.5 MVA transformer pf=1
 secondary.voltage = 300e3;
 
-primary.N_turns = 8;
+primary.N_turns = 15;
 
 %% Flux Current Insulation
 Bmax = 1.1; %Maximum operating flux density (T)

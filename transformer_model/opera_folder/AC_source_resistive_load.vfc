@@ -6,12 +6,12 @@
    <VfcComponentProperty PropertyChoice="0" PropertyName="CircuitType" PropertyValue="Filamentary"/>
    <VfcComponentProperty PropertyChoice="1" PropertyName="MeshingType" PropertyValue="Filament"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="nfilaments" PropertyValue="1"/>
-   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Ω/m" PropertyChoice="0" PropertyName="RPUL" PropertyValue="0.028"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Î©/m" PropertyChoice="0" PropertyName="RPUL" PropertyValue="0.028"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="Turns" PropertyValue="800"/>
    <VfcComponentProperty PropertyUnit="2" PropertyUnitString="m" PropertyChoice="0" PropertyName="Length" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="1" PropertyName="ModelSymmetry" PropertyValue="Yes"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="SymmFactor" PropertyValue="1"/>
-   <VfcComponentProperty PropertyUnit="0" PropertyUnitString="MΩ" PropertyChoice="0" PropertyName="ProbeResistance" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="0" PropertyUnitString="MÎ©" PropertyChoice="0" PropertyName="ProbeResistance" PropertyValue="1"/>
    <VfcComponentProperty PropertyUnit="2" PropertyUnitString="A" PropertyChoice="0" PropertyName="InitialCurrent" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="MutualCoupling" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
@@ -30,12 +30,12 @@
    <VfcComponentProperty PropertyChoice="0" PropertyName="CircuitType" PropertyValue="Filamentary"/>
    <VfcComponentProperty PropertyChoice="1" PropertyName="MeshingType" PropertyValue="Filament"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="nfilaments" PropertyValue="1"/>
-   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Ω/m" PropertyChoice="0" PropertyName="RPUL" PropertyValue="3.1e-5"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Î©/m" PropertyChoice="0" PropertyName="RPUL" PropertyValue="3.1e-5"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="Turns" PropertyValue="8"/>
    <VfcComponentProperty PropertyUnit="2" PropertyUnitString="m" PropertyChoice="0" PropertyName="Length" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="1" PropertyName="ModelSymmetry" PropertyValue="Yes"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="SymmFactor" PropertyValue="1"/>
-   <VfcComponentProperty PropertyUnit="0" PropertyUnitString="MΩ" PropertyChoice="0" PropertyName="ProbeResistance" PropertyValue="1"/>
+   <VfcComponentProperty PropertyUnit="0" PropertyUnitString="MÎ©" PropertyChoice="0" PropertyName="ProbeResistance" PropertyValue="1"/>
    <VfcComponentProperty PropertyUnit="2" PropertyUnitString="A" PropertyChoice="0" PropertyName="InitialCurrent" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="MutualCoupling" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
@@ -53,7 +53,7 @@
    <VfcComponentProperty PropertyUnit="2" PropertyUnitString="V" PropertyChoice="0" PropertyName="PeakV" PropertyValue="3000"/>
    <VfcComponentProperty PropertyUnit="0" PropertyUnitString="Hz" PropertyChoice="0" PropertyName="Frequency" PropertyValue="1000"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="Phase" PropertyValue="0"/>
-   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="s" PropertyChoice="0" PropertyName="RampTime" PropertyValue=""/>
+   <VfcComponentProperty PropertyUnit="1" PropertyUnitString="ms" PropertyChoice="0" PropertyName="RampTime" PropertyValue="0.1"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="showLabel" PropertyValue="Name only"/>
    <VfcComponentProperty PropertyChoice="1" PropertyName="DefaultLabelOffset" PropertyValue="Yes"/>
@@ -76,7 +76,7 @@
  </VfcComponent>
  <VfcComponent InScene="1" Width="4" X="15" Y="-4" Direction="1" Reflected="0" Type="&quot;Resistor&quot;" Name="R1">
   <VfcComponentProperties>
-   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Ω" PropertyChoice="0" PropertyName="Resistance" PropertyValue="15e3"/>
+   <VfcComponentProperty PropertyUnit="2" PropertyUnitString="Î©" PropertyChoice="0" PropertyName="Resistance" PropertyValue="15e3"/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="Notes" PropertyValue=""/>
    <VfcComponentProperty PropertyChoice="0" PropertyName="showLabel" PropertyValue="Name only"/>
    <VfcComponentProperty PropertyChoice="1" PropertyName="DefaultLabelOffset" PropertyValue="Yes"/>

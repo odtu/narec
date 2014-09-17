@@ -1,19 +1,19 @@
 /RESET HISTORY
 UNDO STATE=ROOT |  HISTORY STATES=0 
 
-/Dimensions (for Nprimary=8)
+/Dimensions (for Nprimary=5)
 /Core
-#core_width=1100
-#core_height=750
-#core_thickness=275
+#core_width=1256
+#core_height=598
+#core_thickness=203
 
 /Coil
-#primary_Rin=202
-#primary_Rout=245
+#primary_Rin=149.5
+#primary_Rout=222
 #primary_height=192
 
-#secondary_Rin=215
-#secondary_Rout=555
+#secondary_Rin=163
+#secondary_Rout=781
 #secondary_height=192
 
 /Create core
