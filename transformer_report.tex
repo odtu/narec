@@ -532,19 +532,6 @@ Although, it is not presented in this report, the main dimensions and the mass o
 \end{figure}
 
 
-\section{Conclusion}
-
-In this report, a review of core materials and loss calculation methods for medium frequency transformers are presented. Following conclusions can be drawn from the report:
-
-\textbf{Core Material}: Although electrical steel laminations are commonly used in line frequency transformers, they are not suitable in medium frequency transformers with their increased losses. Ferrites have very low losses, but they also have a very low operating flux density, which makes them unsuitable for high power applications. Nano-crystalline material is considered to be most suitable material with its high flux density and very low losses at high frequencies. Vacuumschmelze's Vitroperm500F is a popular material, that can be used. Amorphous materials can be used to reduce the core mass, as their operating flux densities are 25\% higher than nano-crystalline materials, but they have higher losses.
-
-\textbf{Core Type}: Various transformer core topologies are compared in \cite{Agheb2012}. It is considered that core type transformer is the simplest and easiest to manufacture, and hence the most suitable option as the initial prototype.
-
-\textbf{Winding Type}: In the primary field windings, the most suitable winding type is foil-type conductors, as low thickness is required for minimum eddy current loss, but a large conductor area is required to conduct high input current. It is possible to use two parallel primary windings to double the conducting area. Standard HV cables are proposed to be used in the secondary winding in order to simplify the manufacturing and insulation.Multi-stranded insulated conductors can be used to minimize the eddy current losses as a replacement to Litz wires.
-
-Matlab models are developed to estimate basic dimensions of the transformer core and winding. These parameters can be used as an input to finite element models or for a more detailed analytical models. In order to calculate the core losses accurately, the loss mapping of the material with magnetic flux and operating frequency should be known. This can be obtained from the manufacturer directly for some common materials, but a better option is to setup a small experimental rig to obtain these values.
-
-\clearpage
 
 \section{Sample Design}
 
@@ -578,7 +565,7 @@ Following assumptions are made in the design process:
 \item Gap Between LV and HV Winding: 50 mm
 \end{itemize}
 
-Four Designs are presented in this report with varying primary(low-voltage) number of turns:
+In this report, four transformer designs are presented with varying primary(low-voltage) number of turns:
 
 \begin{itemize}
 \item Design A: $Nturns_{LV}=5$
@@ -587,14 +574,36 @@ Four Designs are presented in this report with varying primary(low-voltage) numb
 \item Design D: $Nturns_{LV}=15$
 \end{itemize}
 
-The specifications of these designs are presented through Table~\ref{design_A} to Table~\ref{design_D}. Core mass, LV and HV conductor length variation are presented in Table~\ref{conductor_length}. From the table, following can be concluded:
+\begin{figure}[]
+  \centering
+    \includegraphics[width=0.45\textwidth]{Np5}
+    \includegraphics[width=0.45\textwidth]{Np8_pers}
+
+a) Nturn$_{LV}$=5 \hspace{1.1in} b) Nturn$_{LV}$=8
+
+    \includegraphics[width=0.45\textwidth]{N12}
+    \includegraphics[width=0.45\textwidth]{N15}
+
+a) Nturn$_{LV}$=12 \hspace{1.1in} b) Nturn$_{LV}$=15
+
+  \caption{Opera models of transformers with varying LV number of turns.}
+  \label{trans_images}
+\end{figure}
+
+
+The FEA models of the designs are presented in Fig.~\ref{trans_images}, and the specifications of these designs are presented through Table~\ref{design_A} to Table~\ref{design_D}. Table~\ref{conductor_length} compares the core mass, conductor length (for the LV and HV windings). 
+From the table, following can be concluded:
 \begin{itemize}
 \item Core mass reduces as the number of turns increases.
-\item The length of both windings increase with number of turns. However, increase in the LV winding length is less compared to HV winding length. For example, when primary number of turns is increased from  5 to 15, the length of the LV winding just doubles, however, the length of HV winding quadruples, which makes the losses in the HV side more dominant. This is due to thick insulation around the HV cable and high number of turns.
+\item The length of both windings increase with number of turns. However, increase in the HV winding length is more significant compared to the LV winding. For example, when primary number of turns is increased from  5 to 15, the length of the LV winding just doubles, however, the length of HV winding quadruples, which makes the losses in the HV side more dominant. This is due to thick insulation around the HV cable and high number of turns.
 \item Assuming the core loss is proportional to core mass and the copper loss is proportional to conductor length, the core loss reduces with increasing number of turns, whereas the copper loss increases with increasing number of turns.
 \end{itemize}
 
-The optimum number of turns is selected as 8 for the FEA simulations. FEA simulations are performed with Opera 3D software and the model building scripts can be found in the project folder.
+
+Based on the initial models, the optimum number of turns for the primary winding is selected as 8, and more detailed FEA simulations are performed. FEA simulations are performed with Opera 3D software and the scripts that are used to model the transformer are available in the project folder.
+
+Fig.~\ref{Np8_FEA} shows the FEA model and magnetic flux distribution for Design-B($Nturns_{LV}=8$). Flux density vectors are shown in Fig.~\ref{Np8_FEA}(b). The distribution in the core cross-section area is presented in Fig.~\ref{Np8_FEA}(c) and Fig.~\ref{Np8_FEA}(d). These figures show that the distribution of the magnetic flux is quite homogeneous at the operating magnetic flux magnitude. Thus, analytical core loss models, which are presented in the previous sections, can also be used with enough accuracy, if required.
+
 
 \begin{table}[]
 \begin{center}
@@ -786,6 +795,22 @@ Approx. Core Loss & 307 W (1 kHz) \\
 \label{design_D}
 \end{table}
 
+\begin{figure}[]
+  \centering
+    \includegraphics[width=0.5\textwidth]{N8_B}
+    \includegraphics[width=0.49\textwidth]{N8_Bvectors}
+
+a) Meshed model \hspace{1in} b) Flux density vectors in the core.
+
+    \includegraphics[width=0.5\textwidth]{N8_core_By}
+    \includegraphics[width=0.45\textwidth]{N8_core_By3}
+
+c) Flux density distribution in the core cross-section.
+
+  \caption{FEA models and flux density distribution in the core (Design-B, $Nturns_{LV}=8$).}
+  \label{Np8_FEA}
+\end{figure}
+
 \clearpage
 
 \section{Core Losses}
@@ -852,6 +877,27 @@ Frequency(Hz) & Flux Density (T) & Loss density (W/kg) \\
 \caption{Variation of core loss of Vitroperm 500 with frequency and flux density.}
 \label{core_loss_vs_freq_B}
 \end{table}
+
+\section{Conclusion}
+
+In this report, a review of core materials and loss calculation methods for medium frequency transformers are presented. Analytical and FEA models are also presented (and available in the project folder).
+
+Following conclusions can be drawn from the report:
+
+\textbf{Core Material}: Although electrical steel laminations are commonly used in line frequency transformers, they are not suitable in medium frequency transformers with their increased losses. Ferrites have very low losses, but they also have a very low operating flux density, which makes them unsuitable for high power applications. Nano-crystalline material is considered to be most suitable material with its high flux density and very low losses at high frequencies. Vacuumschmelze's Vitroperm500F is a popular material, that can be used. Amorphous materials can be used to reduce the core mass, as their operating flux densities are 25\% higher than nano-crystalline materials, but they have higher losses.
+
+\textbf{Core Type}: Various transformer core topologies are compared in \cite{Agheb2012}. It is considered that core type transformer is the simplest and easiest to manufacture, and hence the most suitable option as the initial prototype.
+
+\textbf{Winding Type}: In the primary field windings, the most suitable winding type is foil-type conductors, as low thickness is required for minimum eddy current loss, but a large conductor area is required to conduct high input current. It is possible to use two parallel primary windings to double the conducting area. Standard HV cables are proposed to be used in the secondary winding in order to simplify the manufacturing and insulation.Multi-stranded insulated conductors can be used to minimize the eddy current losses as a replacement to Litz wires.
+
+Analytical (Matlab) models are developed to estimate the parameters of the transformer. These parameters are used as an input to finite element models. It is also possible to link these models with more detailed analytical models.
+
+Four transformer designs with primary number of turns varying from 5 to 15 are compared, and it is found that the design with a primary turns ratio of 8 is the most optimum design considering conductor length and core mass. This transformer uses 11 m conductor in the LV winding, and 1889 m HV cable in the secondary winding. The core mass is estimated as 1500 kg.
+
+The core loss is estimated by extrapolating the core loss data presented in the manufacturer's data, which is fed into the FEA models. Core loss for Design-B is estimated as 525 W at 1 kHz (pure sinusoidal excitation). FEA models showed that the magnetic flux distribution in the core is homogeneous, thus the core loss can also be calculated using analytical models. However, in order to get more accurate results, loss characteristics of the transformer core material should be mapped experimentally with varying magnetic flux and operating frequency.
+
+\clearpage
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
